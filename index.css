@@ -1,0 +1,153 @@
+body{
+    color: black;
+}
+  
+a{
+    color: black;
+}
+
+h1{
+    font-size: 48px;
+    font-family: 'Righteous';
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.grid{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3%;
+    flex-wrap: wrap; /* permite que las cajas se apilen cuando no entran en la res. Las cajas hijas deben tener medidas en px */
+}
+.g-col-4{
+    width: 500px;
+    text-align: center;
+    height: 300px;
+    padding: 10px 50px 20px 50px;
+    box-shadow: 0 0 20px rgba(0,0,0, 0.2);
+    margin: 2%;
+    /* para centrar en el eje y */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.nombreEfecto{
+    display: flex;
+    flex-direction:column;
+    font-weight: bold;
+    font-family: "Righteous";
+}
+
+/*------------ Tarjetas giratorias ------------*/
+.cardPadre{
+    display: flex;
+    flex-wrap: wrap; /* si son varias tarjetas las va bajando cuando no entran en la resolucion */
+    justify-content: space-around;
+    width: 100%;
+    height:100%;
+    border: red solid 1px;
+  }
+  .card{
+    position: relative;
+    width: 400px;
+    height:250px;
+    color: white;
+    font-size:large;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  .card div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    backface-visibility: hidden;
+    transition: 0.5s;
+    background-color: black;
+  }
+  .card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
+  }
+  .card .front{
+    background-color: black;
+    transform: perspective(500px) rotateY(0deg);
+    border: white solid 1px;
+  }
+  .card .back{
+    background-color: black;
+    transform: perspective(500px) rotateY(180deg);
+    border: white solid 1px;
+  }
+  .card:hover .front{
+    transform: perspective(500px) rotateY(180deg);
+  }
+  .card:hover .back{
+    transform: perspective(500px) rotateY(360deg);
+  }
+
+  /*------------ Blanco y negro a color ------------*/
+  .blancoYNegroAColor{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; 
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;  
+    object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
+    justify-content: space-around; /*centra la imagen y el contenido */
+    border: red solid 1px;
+    text-align: center;
+  }
+  .imagenAColorar{
+    width: 400px;
+    height: 250px;
+    filter: grayscale(100%);
+    cursor: pointer; /* mouse en modo hipervinculo */
+    transition: 0.9s; 
+  }
+  .imagenAColorar:hover{
+    filter: grayscale(0%);
+  }
+  
+/*------------ IMAGEN CON SUBTITULO ------------*/
+.imagenConSubtitulo{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; 
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;  
+    object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
+    justify-content: space-around; /*centra la imagen y el contenido */
+    border: red solid 1px;
+    text-align: center;
+  }
+  .imagenConSubtitulo img{
+    width: 400px;
+    height: 250px;
+  }
+  .subtituloImagen{
+    position: absolute;
+    bottom: 0;
+    width: 400px;
+    height: 20%;
+    padding-left: 20px;
+    text-align: left;
+    color: white;
+    background: rgba(40, 53, 50, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform:uppercase;
+  }
+  
