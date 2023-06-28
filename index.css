@@ -66,7 +66,7 @@ h1{
     justify-content: center;
     text-align: center;
     backface-visibility: hidden;
-    transition: 0.5s;
+    transition: 1s ease-in-out;
     background-color: black;
   }
   .card img{
@@ -79,9 +79,10 @@ h1{
     transform: perspective(500px) rotateY(0deg);
     border: white solid 1px;
   }
+  /* en la propiedad Transform si quiero modificar el giro (vertircal, horizontal, izq a der, der a izq tengo que modificar rotateY a rotateX y los grados + a - */
   .card .back{
     background-color: black;
-    transform: perspective(500px) rotateY(180deg);
+    transform: perspective(500px) rotateY(180deg); 
     border: white solid 1px;
   }
   .card:hover .front{
@@ -116,7 +117,22 @@ h1{
     filter: grayscale(0%);
   }
   
-/*------------ IMAGEN CON SUBTITULO ------------*/
+/*------------ IMAGEN QUE SE EXPANDE ------------*/
+
+.imagenExpandida{
+  width: 400px;
+  height: 250px;
+  cursor: pointer; /* mouse en modo hipervinculo */
+  transition: 0.9s; 
+  overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
+}
+.imagenExpandida:hover{
+  transform: scale(2.17); 
+}
+
+
+
+/*------------ APARECE TEXTO ------------*/
 .imagenConSubtitulo{
     width: 100%;
     height: 100%;
@@ -151,3 +167,42 @@ h1{
     text-transform:uppercase;
   }
   
+/*------------ IMAGEN CON SUBTITULO ------------*/
+
+.apareceTexto{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden; 
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;  
+  object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
+  justify-content: space-around; /*centra la imagen y el contenido */
+  border: red solid 1px;
+  text-align: center;
+}
+.apareceTexto img{
+  width: 400px;
+  height: 250px;
+}
+.textoConHover{
+  opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    background: rgba(40, 53, 50, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+    font-size: 18px;
+    letter-spacing: 3px;
+    transition: 1s;
+}
+.textoConHover:hover{
+    opacity: 1;
+}
