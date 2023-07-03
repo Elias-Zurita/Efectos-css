@@ -10,7 +10,7 @@ h1{
     font-size: 48px;
     font-family: 'Righteous';
     text-align: center;
-    margin-bottom: 15px;
+    margin-top: 2%;
     font-weight: bold;
 }
 .grid{
@@ -92,7 +92,7 @@ h1{
     transform: perspective(500px) rotateY(360deg);
   }
 
-  /*------------ Blanco y negro a color ------------*/
+  /*------------ BLANCO Y NEGRO A COLOR ------------*/
   .blancoYNegroAColor{
     width: 100%;
     height: 100%;
@@ -118,58 +118,247 @@ h1{
   }
   
 /*------------ IMAGEN QUE SE EXPANDE ------------*/
-
-.imagenExpandida{
+.cajaImagenZoom{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: red solid 1px;
+  text-align: center;
+}
+.cajaImagenaAumentar{
   width: 400px;
   height: 250px;
   cursor: pointer; /* mouse en modo hipervinculo */
-  transition: 0.9s; 
   overflow: hidden; /* la imagen no se sale de su caja al expandirse con el hover */
 }
-.imagenExpandida:hover{
-  transform: scale(2.17); 
+.cajaImagenaAumentar .imagenAumentada:hover{
+  transform: scale(2.07); 
+  cursor: pointer; /* mouse en modo hipervinculo */
+}
+.imagenAumentada{
+  transition: 1s ease-in-out;
+}
+.cajaImagenaAumentar img{
+  width: 100%;
+  height: 100%;
 }
 
+/*------------ TEXTO VIENE Y VA ------------*/
+.cajaFadeinFadeOut{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+  border: red solid 1px;
+}
+@keyframes textoVieneyVaAnimacion{
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+.textoVieneyVa{
+  width: 400px;
+  height: 250px;
+  font-size: xx-large;
+  color:#343F4F;
+  font-family: "Shrikhand";
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-weight: bold;
+  margin-bottom: 15px;
+  animation-name: textoVieneyVaAnimacion;
+  animation-duration: 1s;
+  animation: textoVieneyVaAnimacion 0.5s infinite alternate;
+}
 
+/*------------ TEXTO AUTOESCRITURA ------------*/
+.cajaPadreAutoescritura{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+  border: red solid 1px;
+}
+.autoEscritura{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.tipeWritter{
+  position: relative;
+  font-family: "Righteous", monospace;
+  font-size: 4em;
+  color: crimson;
+}
+.tipeWritter::after{
+  content: "|"; /* la rayita de barrido que aparecera */
+  position: absolute;
+  right: -10%; /* adonde va a terminar el barrido (mientras menos sea el % mas a la derecha) */
+  text-align: start;
+  color: black;
+  background-color: white; /* hace que se haga transparente ya que el fondo es del mismo color */
+  width:115%; /* desde donde arranca (mientras mas grande arranca desde mas atras) */
+  animation: typing 2s steps(20) alternate infinite, line 0.9s infinite;
+}
+@keyframes typing {
+  to{
+      width: 0%;
+  }
+}
+@keyframes line{
+  50%{
+      color: transparent; /* efecto para que titile la linea de barrido */
+  }
+}
+
+/*------------ ICONOS GIRANDO -------------------*/
+.cajaIconoGirando{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+  border: red solid 1px;
+}
+.iconoGirando{
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.iconoGirando i{
+  display: flex;
+  justify-content: space-around;
+  height: 70px;
+  cursor: pointer;
+}
+.fa-earth-americas{
+  font-size: 70px;
+  animation: rotar 2s linear infinite;
+  color: rgb(30, 227, 145);
+  background-color: rgb(21, 57, 238); 
+  border-radius:100%
+}
+@keyframes rotar {
+  100%{
+    transform: rotate(-360deg)
+  }
+}
+.fa-poo{
+  font-size: 70px;
+  animation: girar 2s linear infinite;
+  color: rgb(179, 105, 20);
+}
+@keyframes girar {
+  100%{
+    transform:  rotateY(360deg);
+  }
+}
+.fa-gamepad{
+  font-size: 70px;
+  color: rgb(48, 48, 48);
+  animation: voltear 2s linear infinite;
+  transition: 2s;
+}
+@keyframes voltear {
+  100%{
+    transform:  rotateX(360deg);
+  }
+}
+/*------------ TEXTO QUE SE SUBTITULA ------------*/
+.cajaTextoSubtitulado{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+  border: red solid 1px;
+}
+.cajaSubtitulado{
+  width: 400px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+.textoSubtitulado{
+  width: max-content;
+  position: relative;
+  cursor: pointer;
+  margin-left:auto;
+  margin-right:auto;
+  color: rgb(38, 193, 69);
+  font-family: "Spicy Rice";
+  font-size: xxx-large;
+}
+.textoSubtitulado::after{  /* raya del subtitulo */
+  content: " ";
+  position: absolute;
+  bottom: -2px;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  background-color: black;
+  transition: 0.3s;
+  transition-timing-function: ease-in-out;
+  transform: scaleX(0);
+}
+.textoSubtitulado:hover::after{
+  transform: scaleX(1);
+}
 
 /*------------ APARECE TEXTO ------------*/
-.imagenConSubtitulo{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden; 
-    cursor: pointer;
-    display: flex;
-    flex-wrap: wrap;  
-    object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
-    justify-content: space-around; /*centra la imagen y el contenido */
-    border: red solid 1px;
-    text-align: center;
-  }
-  .imagenConSubtitulo img{
-    width: 400px;
-    height: 250px;
-  }
-  .subtituloImagen{
-    position: absolute;
-    bottom: 0;
-    width: 400px;
-    height: 20%;
-    padding-left: 20px;
-    text-align: left;
-    color: white;
-    background: rgba(40, 53, 50, 0.8);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: bold;
-    text-transform:uppercase;
-  }
-  
-/*------------ IMAGEN CON SUBTITULO ------------*/
-
+.cajaApareceTexto{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height:100%;
+  border: red solid 1px;
+}
 .apareceTexto{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden; 
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;  
+  object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
+  justify-content: space-around; /*centra la imagen y el contenido */
+  text-align: center;
+}
+.apareceTexto img{
+  width: 400px;
+  height: 250px;
+}
+.textoConHover{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
+  background: rgba(40, 53, 50, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+  font-size: 18px;
+  letter-spacing: 3px;
+  transition: 1s;
+}
+.textoConHover:hover{
+  opacity: 1;
+}
+
+/*------------ IMAGEN CON SUBTITULO ------------*/
+.imagenConSubtitulo{
   width: 100%;
   height: 100%;
   position: relative;
@@ -182,27 +371,65 @@ h1{
   border: red solid 1px;
   text-align: center;
 }
-.apareceTexto img{
+.imagenConSubtitulo img{
   width: 400px;
   height: 250px;
 }
-.textoConHover{
-  opacity: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: white;
-    background: rgba(40, 53, 50, 0.8);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: 1s;
-    font-size: 18px;
-    letter-spacing: 3px;
-    transition: 1s;
+.subtituloImagen{
+  position: absolute;
+  bottom: 0;
+  width: 400px;
+  height: 20%;
+  padding-left: 20px;
+  text-align: left;
+  color: white;
+  background: rgba(40, 53, 50, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform:uppercase;
 }
-.textoConHover:hover{
-    opacity: 1;
+
+/*----------RELLENO BOTON------------*/
+.rellenoBoton{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+  border: red solid 1px;
+}
+.cajaBotonRellenado{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.rellenoBoton button{
+  cursor: pointer;
+  background-color: #1e2326;
+  width: fit-content;
+  display: block;
+  margin: 15px auto;
+  padding: 5px 22px;
+  font-size: 20px;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+}
+.rellenoBoton button .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1CB698;
+  z-index: -1; /* pone el fondo turquesa por detras de las letras "Descargar CV" */
+  transition: 1s;
+}
+.rellenoBoton button:hover .overlay{
+  width: 100%;
 }
