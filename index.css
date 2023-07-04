@@ -1,5 +1,6 @@
 body{
     color: black;
+    transition: 2s;
 }
   
 a{
@@ -36,6 +37,7 @@ h1{
     flex-direction:column;
     font-weight: bold;
     font-family: "Righteous";
+    font-size: 20px;
 }
 
 /*------------ Tarjetas giratorias ------------*/
@@ -45,7 +47,6 @@ h1{
     justify-content: space-around;
     width: 100%;
     height:100%;
-    border: red solid 1px;
   }
   .card{
     position: relative;
@@ -103,7 +104,6 @@ h1{
     flex-wrap: wrap;  
     object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
     justify-content: space-around; /*centra la imagen y el contenido */
-    border: red solid 1px;
     text-align: center;
   }
   .imagenAColorar{
@@ -122,7 +122,6 @@ h1{
   width: 100%;
   height: 100%;
   cursor: pointer;
-  border: red solid 1px;
   text-align: center;
 }
 .cajaImagenaAumentar{
@@ -150,7 +149,6 @@ h1{
   justify-content: space-around;
   width: 100%;
   height:100%;
-  border: red solid 1px;
 }
 @keyframes textoVieneyVaAnimacion{
   0%{opacity: 1;}
@@ -180,7 +178,6 @@ h1{
   justify-content: space-around;
   width: 100%;
   height:100%;
-  border: red solid 1px;
 }
 .autoEscritura{
   display: flex;
@@ -222,7 +219,6 @@ h1{
   justify-content: space-around;
   width: 100%;
   height:100%;
-  border: red solid 1px;
 }
 .iconoGirando{
   height: 100%;
@@ -276,7 +272,6 @@ h1{
   justify-content: space-around;
   width: 100%;
   height:100%;
-  border: red solid 1px;
 }
 .cajaSubtitulado{
   width: 400px;
@@ -295,6 +290,10 @@ h1{
   color: rgb(38, 193, 69);
   font-family: "Spicy Rice";
   font-size: xxx-large;
+  transition: 1.5s ease-in-out;
+}
+.textoSubtitulado:hover{
+  color: crimson;
 }
 .textoSubtitulado::after{  /* raya del subtitulo */
   content: " ";
@@ -312,13 +311,155 @@ h1{
   transform: scaleX(1);
 }
 
+/*------------ BOTONES DE NEON -------------*/
+.cajaBotonNeon{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+}
+.botonesNeon{
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center; 
+  background-color: #1e2326;
+}
+.botonesNeon button{
+  height: 40px;
+  width: 25%;
+  padding: 8px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  transition: 0.5s;
+  background-color: transparent;
+}
+.botonVerde{
+  border: #5deb80 dashed 0.5px;
+}
+.botonTurquesa{
+  border: #03e9f4 dashed 0.5px;
+}
+.botonRosa{
+  border: #fc56ff dashed 0.5px;
+}
+.botonVerde:hover{
+  background-color: #5deb80;
+  color: #050801;
+  border: none;
+  box-shadow: 0 0 5px #5deb80,
+              0 0 25px #5deb80,
+              0 0 50px #5deb80,
+              0 0 200px #5deb80;
+}
+.botonTurquesa:hover{
+  background-color: #03e9f4;
+  color: #050801;
+  border: none;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 200px #03e9f4;
+}
+.botonRosa:hover{
+  background-color: #fc56ff;
+  color: #050801;
+  border: none;
+  box-shadow: 0 0 5px #fc56ff,
+              0 0 25px #fc56ff,
+              0 0 50px #fc56ff,
+              0 0 200px #fc56ff;
+}
+
+/*------------ MODO NOCTURNO ------------*/
+.cajaModoNocturno{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+}
+.botonNocturno{
+  width: 400px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+input{
+  display: none;
+}
+.light{
+  background-color: white;
+}
+.light .toggle{
+  background: linear-gradient(145deg, #e1e1e1, #fff);
+  box-shadow: 3px 3px 4px #e6e6e6,
+              -3px -3px 4px #ffffff;
+}
+.light .toggle .fa-sun{
+  color: #fafafa;
+}
+.light .toggle .fa-moon{
+  color: #151d2a
+}
+.light .toggle .ball{
+  background: #151d2a;
+}
+.dark{
+  background-color: #151d2a;
+  color: white;
+}
+.dark .toggle{
+  background: #151d2a;
+  box-shadow: 3px 3px 3px #0e131b,
+              -3px -3px 3px #1c2739;
+}
+.dark .toggle .fa-sun{
+  color: #fafafa;
+}
+.dark .toggle .fa-moon{
+  color: #151d2a
+}
+.dark .toggle .ball{
+  background: #fafafa;
+  transform: translateX(60px);
+}
+.toggle{
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  height: 60px;
+  border-radius: 50px;
+  transition: 2s
+}
+.toggle i{
+  width: 50%;
+  line-height: 60px;
+  text-align: center;
+  font-size: 30px;
+  z-index: 1;
+}
+.toggle .ball{
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  margin: 7.5px;
+  border-radius: 50%;
+  transition: .3s ease-out;
+}
+
 /*------------ APARECE TEXTO ------------*/
 .cajaApareceTexto{
   display: flex;
   flex-direction: column;
   width: 100%;
   height:100%;
-  border: red solid 1px;
 }
 .apareceTexto{
   width: 100%;
@@ -368,7 +509,6 @@ h1{
   flex-wrap: wrap;  
   object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
   justify-content: space-around; /*centra la imagen y el contenido */
-  border: red solid 1px;
   text-align: center;
 }
 .imagenConSubtitulo img{
@@ -399,7 +539,6 @@ h1{
   justify-content: space-around;
   width: 100%;
   height:100%;
-  border: red solid 1px;
 }
 .cajaBotonRellenado{
   height: 100%;
@@ -432,4 +571,212 @@ h1{
 }
 .rellenoBoton button:hover .overlay{
   width: 100%;
+}
+
+/*------------ RECUADRO DE BOTON ------------*/
+.recuadroaBoton{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+}
+.cajaRecuadro{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.botonConRecuadro{
+  position: relative;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  overflow: hidden; /* esconde el recuadro */
+  padding: 5px 22px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  background:#0156a1;
+  font-weight: bold;
+}
+.botonConRecuadro:hover{
+  color: white;
+}
+.botonConRecuadro span{
+  position: absolute;
+  background: black; /* color de las rayas de recuadro */
+  transition: 0.3s ease-in-out;
+}
+.botonConRecuadro span:nth-child(1){
+  width: 100%;
+  height: 3px;
+  top: 0;
+  left: -100%;
+}
+.botonConRecuadro span:nth-child(2){
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  right: -100%;
+}
+.botonConRecuadro span:nth-child(3){
+  width: 3px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+}
+.botonConRecuadro span:nth-child(4){
+  width: 3px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+}
+.botonConRecuadro:hover span:nth-child(1){
+  left: 0;
+}
+.botonConRecuadro:hover span:nth-child(2){
+  right: 0;
+}
+.botonConRecuadro:hover span:nth-child(3){
+  bottom: 0;
+}
+.botonConRecuadro:hover span:nth-child(4){
+  top: 0;
+}
+
+
+/*------------ CAROUSEL DE TARJETAS 3D ------------*/
+
+.tituloCarousel3d{
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Righteous';
+}
+.bodyCarousel3D{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  margin: 0% 3% 3% 3%;
+  font-family: 'Poppins';
+  padding: 2%;
+  box-shadow: 0 0 20px rgba(0,0,0, 0.2);
+}
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 600px;
+  display: flex;
+  transform-style: preserve-3d;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tarjetas {
+  position: relative;
+  height: 350px;
+  width: 50%;
+  margin-bottom: 20px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.tarjetas label { /* TARJETA */
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+  transition: transform 0.55s ease;
+}
+.tarjetas .tarjeta{
+  position: relative;
+  height: 350px;
+  padding: 30px 35px;
+  border: black solid 1px;
+  transition: 0.3s ease-in-out;
+}
+.tarjeta{
+  border-radius: 0px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  padding: 2% 3% 2% 3%;
+  font-size: 20px;
+  font-family: "Poppins";
+}
+.tarjeta:hover{
+  font-weight: bold;
+  border: rgba(140,140,140,1);
+  -webkit-box-shadow: 0px 0px 19px 0px rgba(140,140,140,1);
+  -moz-box-shadow: 0px 0px 19px 0px rgba(140,140,140,1);
+  box-shadow: 0px 0px 19px 0px rgba(140,140,140,1);
+}
+.infos span{
+  display: block;
+}
+#s1:checked~.tarjetas #slide4,
+#s2:checked~.tarjetas #slide5,
+#s3:checked~.tarjetas #slide1,
+#s4:checked~.tarjetas #slide2,
+#s5:checked~.tarjetas #slide3 {
+  -webkit-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  -moz-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  transform: translate3d(-70%, 0, -220px);
+  --current-color1: #ECEAED;
+  --current-color2: #404457;
+}
+#s1:checked~.tarjetas #slide5,
+#s2:checked~.tarjetas #slide1,
+#s3:checked~.tarjetas #slide2,
+#s4:checked~.tarjetas #slide3,
+#s5:checked~.tarjetas #slide4 {
+  -webkit-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  -moz-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  transform: translate3d(-35%, 0, -120px);
+  --current-color1: #ECEAED;
+  --current-color2: #404457;
+}
+#s1:checked~.tarjetas #slide1,
+#s2:checked~.tarjetas #slide2,
+#s3:checked~.tarjetas #slide3,
+#s4:checked~.tarjetas #slide4,
+#s5:checked~.tarjetas #slide5 {
+  -webkit-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  -moz-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  transform: translate3d(0, 0, 0);
+  --current-color1: #fad00c;
+  --current-color2: #ECEAED;
+}
+#s1:checked~.tarjetas #slide2,
+#s2:checked~.tarjetas #slide3,
+#s3:checked~.tarjetas #slide4,
+#s4:checked~.tarjetas #slide5,
+#s5:checked~.tarjetas #slide1 {
+  -webkit-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  -moz-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  transform: translate3d(35%, 0, -120px);
+  --current-color1: #ECEAED;
+  --current-color2: #404457;
+}
+#s1:checked~.tarjetas #slide3,
+#s2:checked~.tarjetas #slide4,
+#s3:checked~.tarjetas #slide5,
+#s4:checked~.tarjetas #slide1,
+#s5:checked~.tarjetas #slide2 {
+  -webkit-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  -moz-box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  box-shadow: 0px 16px 15px 5px rgba(219,219,219,1);
+  transform: translate3d(70%, 0, -220px);
+  --current-color1: #ECEAED;
+  --current-color2: #404457;
 }

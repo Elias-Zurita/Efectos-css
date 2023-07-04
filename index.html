@@ -13,7 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <!-- Vinculacion con fontawesome para iconos  -->
+    
+    <script src="https://kit.fontawesome.com/d4ee5988c7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Vinculacion con fuentes de google  -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Vinculacion con fuentes de google  -->
     <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet'>
@@ -22,7 +23,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet"> <!-- link para usar Spicy Rice como tipo de fuente  -->
     <link rel="stylesheet" href="index.css"> 
 </head>
-<body>
+
+<body class="light">
     <h1>EFECTOS</h1>
 
     <div class="grid">
@@ -94,13 +96,28 @@
         </div>
         
         <div class="g-col-4">
-            hover a texto que despliega menu vertical
-            <div class="nombreEfecto"></div>
+            <div class="cajaBotonNeon">
+                <div class="nombreEfecto">BOTONES DE NEÓN</div>
+                <div class="botonesNeon">
+                    <button class="botonVerde">NEON</button>
+                    <button class="botonTurquesa">NEON</button>
+                    <button class="botonRosa">NEON</button>
+                </div>
+            </div>
         </div>
         
         <div class="g-col-4">
-            ojo que muestra y oculta texto
-            <div class="nombreEfecto"></div>
+          <div class="cajaModoNocturno">
+            <div class="nombreEfecto">MODO NOCTURNO</div>
+            <div class="botonNocturno">
+              <input type="checkbox" id="toggle">
+              <label class="toggle" for="toggle">
+                <i class="fa-solid fa-sun"></i>
+                <i class="fa-regular fa-moon"></i>
+                <span class="ball"></span>        <!--------- El BODY tiene clase  --------->
+              </label>
+            </div>
+          </div>
         </div>
           
         <div class="g-col-4">
@@ -129,18 +146,106 @@
         <div class="g-col-4">
             <div class="rellenoBoton">
                 <div class="nombreEfecto">RELLENO DE BOTÓN</div>
-                <br>
                 <div class="cajaBotonRellenado">
                     <button>
-                        Agregar al <i class="fa-solid fa-basket-shopping"></i></i>
+                        Agregar al <i class="fa-solid fa-basket-shopping"></i>
                         <span class="overlay"></span>
                     </button>
                 </div>
             </div>
         </div>
+
+        <div class="g-col-4">
+          <div class="recuadroaBoton">
+              <div class="nombreEfecto">RECUADRO A BOTÓN</div>
+              <div class="cajaRecuadro">
+                  <button class="botonConRecuadro">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                      BOTÓN
+                  </button>
+                  <button class="botonConRecuadro">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                      BOTÓN
+                  </button>
+              </div>
+          </div>
+      </div>
     </div>
 
+    <!--------------------- CAROUSEL DE TARJETAS 3D  --------------------->
+    <div class="cajaCarousel3d">
+        <div class="tituloCarousel3d">CAROUSEL DE TARJETAS 3D</div>
+      <div class="bodyCarousel3D">
+        <div class="container">
+
+          <input type="radio" name="slider" class="d-none" id="s1" checked>
+          <input type="radio" name="slider" class="d-none" id="s2">
+          <input type="radio" name="slider" class="d-none" id="s3">
+          <input type="radio" name="slider" class="d-none" id="s4">
+          <input type="radio" name="slider" class="d-none" id="s5">
+      
+          <div class="tarjetas">
+            <label for="s1" id="slide1">
+              <div class="tarjeta" style="background-color: white;">
+                <div class="infos">
+                  <span>Lorem ipsum dolor sit amet, sit amet  adipiscing elit. Aenean vel ansd . Nullam
+                    lorem. Nulla eu
+                    sodales.</span>
+                </div>
+              </div>
+            </label>
+      
+            <label for="s2" id="slide2">
+              <div class="tarjeta" style="background-color: #F1F1F1;">
+                <div class="infos">
+                  <span class="lorem">Lorem ipsum dolor sit amet, sit amet  adipiscing elit. Aenean vel ansd . Nullam
+                    lorem. Nulla eu
+                    sodales</span>
+                </div>
+              </div>
+            </label>
+
+            <label for="s3" id="slide3">
+              <div class="tarjeta" style="background-color: #E6E6E6">
+                <div class="infos">
+                  <span class="lorem">Lorem ipsum dolor sit amet, sit amet  adipiscing elit. Aenean vel ansd . Nullam
+                    lorem. Nulla eu
+                    sodales</span>
+                </div>
+              </div>
+            </label>
+
+            <label for="s4" id="slide4">
+              <div class="tarjeta" style="background-color: #E6E6E6">
+                <div class="infos">
+                  <span class="lorem">Lorem ipsum dolor sit amet, sit amet  adipiscing elit. Aenean vel ansd . Nullam
+                    lorem. Nulla eu
+                    sodales</span>
+                </div>
+              </div>
+            </label>
+
+            <label for="s5" id="slide5">
+              <div class="tarjeta" style="background-color: #F1F1F1;">
+                <div class="infos">
+                  <span class="lorem">Lorem ipsum dolor sit amet, sit amet  adipiscing elit. Aenean vel ansd . Nullam
+                    lorem. Nulla eu
+                    sodales</span>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 
 <script src="script.js"></script>
+
 </html>
