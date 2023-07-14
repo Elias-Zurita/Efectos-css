@@ -249,8 +249,8 @@ h1 i{
   }
 }
 
-/*------------ TEXTO QUE SE SUBTITULA ------------*/
-.cajaSubtitulado{
+/*------------ TEXTO QUE SE SUBRAYA ------------*/
+.cajaSubrayado{
   width: 400px;
   height: 250px;
   display: flex;
@@ -258,7 +258,7 @@ h1 i{
   justify-content: space-around;
   text-align: center;
 }
-.textoSubtitulado{
+.textoSubrayado{
   width: max-content;
   position: relative;
   cursor: pointer;
@@ -269,10 +269,10 @@ h1 i{
   font-size: xxx-large;
   transition: 1.5s ease-in-out;
 }
-.textoSubtitulado:hover{
+.textoSubrayado:hover{
   color: crimson;
 }
-.textoSubtitulado::after{  /* raya del subtitulo */
+.textoSubrayado::after{  /* raya del subtitulo */
   content: " ";
   position: absolute;
   bottom: -2px;
@@ -284,7 +284,7 @@ h1 i{
   transition-timing-function: ease-in-out;
   transform: scaleX(0);
 }
-.textoSubtitulado:hover::after{
+.textoSubrayado:hover::after{
   transform: scaleX(1);
 }
 
@@ -730,6 +730,58 @@ input{
   transform: translate3d(70%, 0, -220px);
   --current-color1: #ECEAED;
   --current-color2: #404457;
+}
+
+/*------------ ACORDEON ------------*/
+.cajaCarousel{
+  margin: 0% 3% 3% 3%;
+  font-family: 'Poppins';
+  padding: 2%;
+  box-shadow: 0 0 20px rgba(0,0,0, 0.2);
+}
+.acordeon{
+  margin-left: auto;
+  margin-right: auto;
+  
+  width: 80%;
+  background-color: white;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 20px;
+}
+.acordeonTitulo{
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Righteous';
+}
+.headerAcordeon{
+  padding: 12px;
+  font-family: "Poppins";
+  font-size: 20px;
+  border: black solid 2px;
+}
+h2{
+  padding:0; 
+  margin: 0
+}
+.tituloAcordeon{
+  width: 100%;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 20px;
+}
+.accordion-header{
+  border: black solid 1px;
+  border-top: none
+}
+.headerAcordeon{
+  text-align: center;
+  border: black solid 1px;
+  margin-bottom: 1px;
+}
+.accordion{
+  --bs-accordion-active-bg: #E6E6E6;  /*  fondo del boton activado*/
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(228, 228, 228, 0.696); /* Color de la sombra del boton activado */
 }
 
 /* Tablets */
