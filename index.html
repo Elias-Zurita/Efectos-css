@@ -20,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Paytone+One"> <!-- link para usar Paytone One como tipo de fuente  -->
         <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet"> <!-- link para usar Shrikhand como tipo de fuente  -->
         <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet"> <!-- link para usar Spicy Rice como tipo de fuente  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> <!-- LIBRERIA PARA EL SLIDE DE PELICULAS (debe ir antes de la vinculacion con las hojas de estilo) -->
         <link rel="stylesheet" href="index.css"> 
     </head>
     
@@ -136,10 +137,9 @@
                     <div class="nombreEfecto">11.IMAGEN CON SUBTITULO</div>
                     <img src="img/alter bridge.jpg">
                     <div class="subtituloImagen">
-                      <div>ALTER BRIDGE</div>
+                    <div>ALTER BRIDGE</div>
                     </div>
-                    </a>
-                  </div>
+                </div>
             </div>
             
             <div class="g-col-4">
@@ -258,6 +258,60 @@
             </div>
         </div>
     
+        <!--------------------- CAROUSEL DE PELICULAS CON SLIDE --------------------->
+        <div class="tituloCarousel3d">CAROUSEL DE PELICULAS CON SLIDE</div>
+        <div class="cajaDePeliculas">
+            <section class="movies espacioParaSlide">
+                <!-- Para que la libreria Swiper funcione deben utilizarse esas clases -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/6.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/7.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/8.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/peliculas/6.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
         <!--------------------- CAROUSEL DE TARJETAS 3D  --------------------->
         <div class="cajaCarousel3d">
             <div class="tituloCarousel3d">CAROUSEL DE TARJETAS 3D</div>
@@ -378,6 +432,7 @@
     
     </body>
     
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> <!-- LIBRERIA PARA EL SLIDE (debe ir antes que el otro script sino no anda)-->
     <script src="script.js"></script>
     
 </html>

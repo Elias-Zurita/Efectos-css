@@ -138,6 +138,7 @@ h1 i{
 .cajaImagenaAumentar img{
   width: 100%;
   height: 100%;
+  object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
 }
 
 /*------------ TEXTO VIENE Y VA ------------*/
@@ -441,6 +442,7 @@ input{
 .apareceTexto img{
   width: 400px;
   height: 250px;
+  object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
 }
 .textoConHover{
   opacity: 0;
@@ -465,8 +467,9 @@ input{
 
 /*------------ IMAGEN CON SUBTITULO ------------*/
 .cajaPadreEfecto img{
-  width: 400px;
+  width: 100%;
   height: 250px;
+  object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
 }
 .subtituloImagen{
   position: absolute;
@@ -608,7 +611,7 @@ input{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  width: 100%;
   height:250px;
   padding: 5%;
 }
@@ -671,6 +674,51 @@ a:hover.icon_bar span {
   -webkit-transform: translateY(-100%);
   -moz-transform: translateY(-100%);
   transform: translateY(-100%);
+}
+
+/*------------ CAROUSEL DE PELICULAS CON SLIDE ------------*/
+.cajaDePeliculas{
+  font-family: 'Poppins';
+  margin: 0% 3% 3% 3%;
+  padding: 2%;
+  box-shadow: 0 0 20px rgba(0,0,0, 0.2);
+}
+.espacioParaSlide{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.movies{
+  padding:20px 0;
+}
+.swiper{
+  border: blue solid 1px;
+  width: 100%;
+}
+.swiper-slide{
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+}
+.swiper-slide img{
+  display: block;
+  width: 100%;
+  object-fit: cover; /* no achica la imagen, sino que la pasa por arriba */
+}
+
+@media(max-width:991px){
+  .bodySwiperdy{
+    min-height: 0vh;
+  }
+  .movies{
+    padding: 30px;
+  }
+}
+@media(max-width:480px){
+  .swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 150px;
+  }
 }
 
 /*------------ CAROUSEL DE TARJETAS 3D ------------*/

@@ -9,3 +9,19 @@ toggle.addEventListener("change", () => {
     sunIcon.className = sunIcon.className == "fa-solid fa-sun" ? "fa-solid fa-sun" : "fa-solid fa-sun";
     moonIcon.className = moonIcon.className == "fa-regular fa-moon" ? "fa-regular fa-moon" : "fa-regular fa-moon";
 })
+
+// CAROUSEL DE PELICULAS CON SLIDE 
+var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true, 
+    slidesPerView: "auto",
+    coverflowEffect:{
+        rotate:15,
+        stretch:0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: true,
+    },
+    loop: true,
+})
