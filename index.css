@@ -2,7 +2,15 @@ body{
     color: black;
     transition: 2s;
 }
-  
+/* Scroll personalizado */
+body::-webkit-scrollbar{
+  width: 9px;
+  background: white;
+}
+body::-webkit-scrollbar-thumb{
+  background:#2965f1;
+  border-radius: 5px;
+}
 a{
   color: black;
   text-decoration: none;
