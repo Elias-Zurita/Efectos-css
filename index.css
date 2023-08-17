@@ -676,6 +676,44 @@ a:hover.icon_bar span {
   transform: translateY(-100%);
 }
 
+/*------------ CUENTA REGRESIVA ------------*/
+.cajaCuentaRegresiva{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+.countdown{
+  display: flex;
+  justify-content:center;
+  font-size:30px;
+  height: 100%;
+  align-items: center;
+}
+.time{
+  margin: 0 20px;
+  width: 100px;
+  text-align: center;
+  margin: 0 2% 0 2%;
+}
+.unidadDeMedida{
+  font-size:40px;
+  font-weight: bold;
+  color: crimson;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.unidadEscrita{
+  color: black;
+  font-size:20px;
+  font-weight: bold;
+}
+
 /*------------ CAROUSEL DE PELICULAS CON SLIDE ------------*/
 .cajaDePeliculas{
   font-family: 'Poppins';
@@ -950,5 +988,11 @@ h2{
   }
   .tarjetas{
     height:200px
+  }
+  .unidadDeMedida{
+    font-size:30px;
+  }
+  .unidadEscrita{
+    font-size:20px;
   }
 }
