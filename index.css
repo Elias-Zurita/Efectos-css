@@ -630,6 +630,7 @@ input{
   flex-wrap: wrap;
   width: 80%;
   height:80%;
+  cursor: pointer;
 }
 .iconosRedes i{
   color: black;
@@ -682,6 +683,82 @@ a:hover.icon_bar span {
   -webkit-transform: translateY(-100%);
   -moz-transform: translateY(-100%);
   transform: translateY(-100%);
+}
+
+/*------------ CAJA DE SCROLLING ------------*/
+.cajaScrolling{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+  justify-content: space-between;
+}
+.scroll-left {
+  height: 30%;
+  top:-25%;
+  overflow: hidden;
+  position: relative;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,112,1) 43%, rgba(0,212,255,1) 79%);
+  color: white;
+  border: none;
+  margin-bottom: 1em;
+}
+.scroll-left p {
+  position: absolute;
+  width: 175%;
+  height: 100%;
+  margin: 0;
+  line-height: 50px;
+  text-align: left;
+  /* Starting position */
+  transform: translateX(100%);
+  /* Apply animation to this element */
+  animation: scroll-left 30s linear infinite;
+  font-size: 40px;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Move it (define the animation) */
+@keyframes scroll-left {
+  0% {
+      transform: translateX(60%);
+  }
+
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/*------------ SCROLLING IMAGEN -----------*/
+.cajaScrollingImagen{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height:100%;
+  justify-content: space-between;
+}
+.cajaPelotaScrolling{
+  border: blue solid 2px;
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+.pelotaDeTenis{
+  width: 50px;
+  height: 50px;
+  animation: rotar 2s linear infinite;
+}
+@keyframes rotar {
+  50%{
+    transform: rotate(360deg)
+  }
 }
 
 /*------------ CUENTA REGRESIVA ------------*/
