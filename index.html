@@ -209,7 +209,7 @@
                                     <i class="fa-brands fa-instagram"></i>
                                 </span>
                                 <span class="iconoEscondido">
-                                    <i class="fa-brands fa-instagram" style="color: white; background:#007bb6"></i>
+                                    <i class="fa-brands fa-instagram" style="color: white; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);"></i>
                                 </span>
                             </a>
                             <a class="icon_bar icon_bar_small">
@@ -233,7 +233,7 @@
                                     <i class="fa-brands fa-tiktok"></i>
                                 </span>
                                 <span class="iconoEscondido">
-                                    <i class="fa-brands fa-tiktok" style="color: white; background: black;"></i>
+                                    <i class="fa-brands fa-tiktok" style="color: white; background: black; text-shadow: #fe2d52 2px 2px 2px;"></i>
                                 </span>
                             </a>
                             <a class="icon_bar icon_bar_small">
@@ -261,23 +261,37 @@
                 <div class="cajaScrolling">
                     <div class="nombreEfecto">15.TEXTO CON SCROLLING</div>
                     <div class="scroll-left">
-                        <p>EVERY MAN DIES, BUT NOT EVERY MAN REALLY LIVES</p>
+                        <p>HELLO WORLD!</p>
                     </div>
                 </div>    
             </div>
 
             <div class="g-col-4">
                 <div class="cajaScrollingImagen">
-                    <div class="nombreEfecto">15.IMAGEN CON SCROLLING</div>
-                    <marquee behavior="alternate" scrollamount="25" class="cajaPelotaScrolling">
-                        <img src="/img/pelotaDeTenis.png" class="pelotaDeTenis">
-                    </marquee>
+                    <div class="nombreEfecto">16.IMAGEN CON MOVIMIENTO</div>
+                    <div class="pelotas">
+                        <marquee 
+                            behavior="alternate"
+                            scrollamount="25"
+                            height="50%"
+                            class="cajaPelotaScrolling">
+                                <img src="/img/pelotaDeTenis.png" class="pelotaDeTenis">
+                        </marquee>
+                        <marquee
+                            direction="up"
+                            scrollamount="25"
+                            height="50%"
+                            behavior="alternate"
+                            style="text-align: center; border-top: white solid 5px">
+                                <img src="/img/pelotaFutbol.png" class="pelotaDeFutbol">
+                        </marquee>
+                    </div>
                 </div>    
             </div>
             
             <div class="g-col-4">
                 <div class="cajaCuentaRegresiva">
-                    <div class="nombreEfecto">15.CUENTA REGRESIVA</div>
+                    <div class="nombreEfecto">17.CUENTA REGRESIVA</div>
                     <div class="countdown" id="countdown">
                         <div class="time">
                             <div class="unidadDeMedida" id="days"></div>
@@ -295,6 +309,30 @@
                             <div class="unidadDeMedida" id="seconds"></div>
                             <div class="unidadEscrita">Seg</div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="g-col-4">
+                <div class="cajaCuentaRegresiva">
+                    <div class="nombreEfecto">18.CARRUSEL CON HOVER</div>
+                    <div class="cajaCarrousel">
+                        <div class="carrusel-container">
+                            <div class="carrusel">
+                                <img src="/img/ruta.jpg">
+                                <img src="/img/playa.jpg">
+                                <img src="/img/cesped.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="g-col-4">
+                <div class="cajaCuentaRegresiva">
+                    <div class="nombreEfecto">19.LOOP SCALE</div>
+                    <div class="cajaScale">
+                                <img src="/img/sol.png">
                     </div>
                 </div>
             </div>
