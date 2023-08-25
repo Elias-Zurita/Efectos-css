@@ -868,6 +868,31 @@ a:hover.icon_bar span {
   }
 }
 
+/*------------ TEXTO COLORES  ------------*/
+.textoColores p {
+  font-size: 40px;
+  font-family: 'Shrikhand';
+  animation: colorChange 3s ease-in-out infinite;
+}
+@keyframes  colorChange {
+  0% { color: #fff71c; }
+  25% { color: #ff2912; }
+  50% { color: #127fec; }
+  75% { color: #ff2912; }
+  100% { color: #fff71c; }
+}
+
+/*------------ AUMENTA TAMAÑO CON CLICK  ------------*/
+
+.apareceDeAbajo{
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+.apareceDeAbajo:active {
+  transform: scale(1.2);
+}
+
+
 /*------------ CAROUSEL DE PELICULAS CON SLIDE ------------*/
 .cajaDePeliculas{
   font-family: 'Poppins';
