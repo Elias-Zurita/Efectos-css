@@ -6,12 +6,10 @@ const minutes = document.getElementById('minutes')
 const seconds = document.getElementById('seconds')
 
 // new Date da: Mes día, año horas:minutos:segundos. Ej: new Date("December 25, 1995 13:30:00")
-const añoActual = new Date().getFullYear();
+const añoActual = new Date().getTime();
 
-/* la fecha debe ir siempre en ingles. En caso de querer ver una fecha del año siguiente se debe poner en {añoActual + 1 }
-ya que si el mes es menor al actual dara numero negativo el contador. Ej: si estamos en Julio(mes 7) y la fecha limite es Marzo (mes 3).
-Es sumamente importante que la fecha vaya con estas comillas ` `  */
-const fechaLimite = new Date(`July 4 ${añoActual + 1} 23:59:59`);
+/* la fecha debe ir siempre en ingles */
+const fechaLimite = new Date("July 5, 2024 00:00:00").getTime();
 
 // Update CountdownTime
 function updateCountdown(){
@@ -28,6 +26,14 @@ function updateCountdown(){
     hours.innerHTML = horas < 10 ? '0' + horas : horas;
     minutes.innerHTML = minutos < 10 ? '0' + minutos : minutos;
     seconds.innerHTML = segundos < 10 ? '0' + segundos : segundos;
+
+    /* Para que no siga restando cuando llega a la fecha limite (diferencia sea menor a 0) */
+    if(diferencia < 0){
+        document.getElementById('days').innerHTML = "00";
+        document.getElementById('hours').innerHTML = "00";
+        document.getElementById('minutes').innerHTML = "00";
+        document.getElementById('seconds').innerHTML = "00";
+    }
 }
 
 setInterval(updateCountdown, 1000);
