@@ -182,26 +182,44 @@ h1 i{
   position: relative;
   font-family: "Righteous", monospace;
   font-size: 4em;
-  color: crimson;
+  color: transparent;
+  background-image: linear-gradient(crimson, crimson);  /* Color con el que va a rellenar las letras */
+  background-repeat: no-repeat;  /* Borra el relleno cuando vuelve hacia atras */
+  -webkit-background-clip: text;  /* rellena solo el texto y no la caja */
+  background-clip: text;
+  background-position: 0 0;
+  animation: rellenadoTexto 5s linear infinite;
+  width: 270px;
 }
-.tipeWritter::after{
-  content: "|"; /* la rayita de barrido que aparecera */
+.tipeWritter::before{/* Barrita de escritura */
+  content: '';
   position: absolute;
-  right: -10%; /* adonde va a terminar el barrido (mientras menos sea el % mas a la derecha) */
-  text-align: start;
-  color: black;
-  background-color: white; /* hace que se haga transparente ya que el fondo es del mismo color */
-  width:115%; /* desde donde arranca (mientras mas grande arranca desde mas atras) */
-  animation: typing 2s steps(20) alternate infinite, line 0.9s infinite;
+  top: 3px;
+  left: 0;
+  width: 0;
+  height: 75%;
+  border-right: 2px black solid; 
+  animation: barrido 5s linear infinite, titila 0.7s infinite;
 }
-@keyframes typing {
-  to{
-      width: 0%;
+@keyframes rellenadoTexto{
+  0%,10%,100%{
+      background-position: -270px 0;  /* Desde donde arranca el efecto de relleno. Debe ser igual al widht del texto */
+  }
+  65%, 85%{  /* Demora el reinicio de autoescritura */
+      background-position: 0 0;
   }
 }
-@keyframes line{
-  50%{
-      color: transparent; /* efecto para que titile la linea de barrido */
+@keyframes barrido {
+  0%,10%,100%{
+     width: 0;
+  }
+  65%, 85%{
+      width: 100%;
+  }
+}
+@keyframes titila{
+  100%{
+      border-right: transparent; /* efecto para que titile la linea de barrido */
   }
 }
 
@@ -941,7 +959,7 @@ a:hover.icon_bar span {
   }
 }
 
-/*------------ ONDA ESPANSIVA ------------*/
+/*------------ BOTON DE WHATSAPP ------------*/
 .cajaBotonWhatsapp{
   display: flex;
   flex-direction: column;
